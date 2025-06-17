@@ -4,20 +4,12 @@
 </template>
 
 <script setup>
-import { RouterLink } from 'vue-router'; // <-- Add this import
-
+import { RouterLink } from 'vue-router';
+import { useMenu } from '../stores/use-menu.js' // su dung store de dong bo menu va router
 import { reactive, h, toRefs } from 'vue';
-import {
-    MailOutlined,
-    DesktopOutlined,
-    InboxOutlined,
-    AppstoreOutlined,
-} from '@ant-design/icons-vue';
 
-const state = reactive({
-    selectedKeys: ['admin-users'],
-    openKeys: [],
-});
+
+const state = useMenu();
 
 const items = [
     {
@@ -33,5 +25,7 @@ const items = [
         label: h(RouterLink, { to: { name: 'admin-settings' } }, { default: () => 'Settings' }),
     },
 ];
+
+
 
 </script>

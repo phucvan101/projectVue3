@@ -3,11 +3,14 @@ import 'bootstrap/dist/css/bootstrap-grid.min.css'
 // sử dụng ant design
 import 'ant-design-vue/dist/reset.css';
 import { createApp } from 'vue'
+import { createPinia } from 'pinia'
 import {Drawer, Button, message, List, Menu } from 'ant-design-vue';
 import App from './App.vue'
 import router from './router'
 
 const app = createApp(App)
+
+app.use(createPinia())
 
 app.use(router)
 

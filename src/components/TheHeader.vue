@@ -20,7 +20,7 @@
         </div>
     </div>
     <a-drawer v-model:open="open" title="Danh Muc" placement="left">
-        <p>some contents</p>
+        <TheMenu />
     </a-drawer>
 
     <a-drawer v-model:open="open_user" title="Admin" placement="right">
@@ -30,6 +30,7 @@
 
 
 <script setup>
+import TheMenu from '../components/TheMenu.vue';
 import { ref } from 'vue';
 const open = ref(false);
 const open_user = ref(false);
